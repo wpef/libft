@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 16:25:38 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/11/29 15:35:48 by fde-monc         ###   ########.fr       */
+/*   Created: 2015/11/28 16:21:11 by fde-monc          #+#    #+#             */
+/*   Updated: 2015/11/29 15:36:55 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_atoi(const char *str)
 {
-	size_t i;
-
+	int n;
+	int i;
+	int csign;
+	
 	i = 0;
-	while (s1[i] == s2[i] && i != n)
+	n = 0;
+	while (ft_ismoreblank(str[i]))
 		i++;
-	if (i == n)
-		return (0);
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	if (str[i] == '+' || str[i] == '-')
+	{
+		i++;
+		csign = i - 1;
+	}
+	while (ft_isdigit(str[i]))
+	{
+		n = n * 10 + (str[i] - 48);
+		i++;
+	}
+	if (str[csign] == '-')
+		n = -n;
+	return (n);
 }
