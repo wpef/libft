@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 20:05:42 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/04 19:02:52 by fde-monc         ###   ########.fr       */
+/*   Created: 2015/12/01 12:15:51 by fde-monc          #+#    #+#             */
+/*   Updated: 2015/12/01 12:36:25 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
+	char *res;
 	int i;
 
 	i = 0;
-	while (s[i] != '\0')
+	if (!s || !f)
+		return (NULL);
+	res = ft_strnew(ft_strlen(s));
+	while (s[i])
+	{
+		res[i] = (*f)(i, s[i]);
 		i++;
-	return (i);
+	}
+	res[i] = '\0';
+	return (res);
 }

@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 20:05:42 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/04 19:02:52 by fde-monc         ###   ########.fr       */
+/*   Created: 2015/12/04 19:54:58 by fde-monc          #+#    #+#             */
+/*   Updated: 2015/12/04 20:40:51 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+static	int	isblank (const char s, size_t i)
 {
-	int i;
+	if (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+		return (0);
+	else
+		return (1);
+}
 
-	i = 0;
-	while (s[i] != '\0')
+char	*ft_strtrim (char const *s)
+{
+	while (isblank(s, i) == 0)
 		i++;
-	return (i);
+
 }

@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,7 +6,7 @@
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 14:22:27 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/11/29 15:16:00 by fde-monc         ###   ########.fr       */
+/*   Updated: 2015/12/01 16:23:39 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +30,7 @@ char	*ft_strncpy(char *dest, const char *src, size_t len);
 char	*ft_strdup(const char *s1);
 char	*ft_strcat(char *s1, const char *s2);
 char	*ft_strncat(char *s1, const char *s2, size_t n);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 char	*ft_strstr(const char *s1, const char *s2);
 char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 char	*ft_strchr(const char *s, int c);
@@ -73,7 +73,17 @@ void	ft_putendl(char const *s);
 void	ft_putendl_fd(char const *s, int fd);
 int		ft_strequ(char const *s1, char const *s2);
 int		ft_strnequ(char const *s1, char const *s2, size_t n);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char		**ft_strsplit (char const *s, char c);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char		**ft_strsplit (char const *s, char c);
+char	*ft_strjoin(char const *s1, char const *s2);
 
+
+char	*ft_itoa(int n);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 void	ft_strdel (char **as);
