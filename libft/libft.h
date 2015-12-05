@@ -6,7 +6,7 @@
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 14:22:27 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/01 16:23:39 by fde-monc         ###   ########.fr       */
+/*   Updated: 2015/12/05 00:54:41 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,7 @@ char		**ft_strsplit (char const *s, char c);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char		**ft_strsplit (char const *s, char c);
 char	*ft_strjoin(char const *s1, char const *s2);
-
-
+char	*ft_strtrim (char const *s);
 char	*ft_itoa(int n);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
