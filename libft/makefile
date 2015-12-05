@@ -6,7 +6,7 @@
 #    By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/04 22:58:04 by fde-monc          #+#    #+#              #
-#    Updated: 2015/12/04 23:48:33 by fde-monc         ###   ########.fr        #
+#    Updated: 2015/12/05 00:36:18 by fde-monc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -88,6 +88,6 @@ fclean: clean
 
 re: fclean all
 
-dawa : 
-	rm -f *.c
-	rm -f libft.h
+test : $(SRC)
+	$(CC) $(CFLAGS) -I . $(SRC) mains/maindeouf.c
+	./a.out
