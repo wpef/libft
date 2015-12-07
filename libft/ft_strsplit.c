@@ -12,17 +12,17 @@
 
 #include "libft.h"
 
-static int	ft_wordscount (char const *s, char c)
+static int	ft_wordscount(char const *s, char c)
 {
-	int 	i;
-	int 	cmp;
-	
+	int	i;
+	int	cmp;
+
 	i = 0;
 	cmp = 0;
 	if (s[0] != c && s[0] != '\0')
 		cmp++;
 	while (s[i])
-	{	
+	{
 		while (s[i] != c && s[i] != '\0')
 			i++;
 		if (s[i] && s[i] == c && (s[i + 1] != c && s[i + 1]))
@@ -30,27 +30,25 @@ static int	ft_wordscount (char const *s, char c)
 		if (s[i])
 			i++;
 	}
-	return(cmp);
+	return (cmp);
 }
 
-char		**ft_strsplit (char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
-	int 	i;
-	int 	strt;
-	int 	len;
-	char 	**tab;
-	int 	wc;
+	int		i;
+	int		strt;
+	int		len;
+	char	**tab;
 
 	i = 0;
 	if (!s)
 		return (NULL);
-	wc = ft_wordscount(s,c);
-	tab = (char **)malloc(sizeof(char*) * wc + 1);
+	tab = (char **)malloc(sizeof(char*) * ft_wordscount(s, c) + 1);
 	if (!tab)
 		return (NULL);
 	strt = 0;
-	while (i < wc)
-	{	
+	while (i < ft_wordscount(s, c))
+	{
 		while (s[strt] && s[strt] == c)
 			strt++;
 		len = 0;
@@ -60,7 +58,6 @@ char		**ft_strsplit (char const *s, char c)
 		strt = strt + len;
 		i++;
 	}
-	tab[wc] = NULL;
+	tab[ft_wordscount(s, c)] = NULL;
 	return (tab);
 }
-

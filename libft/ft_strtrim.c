@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static	int	ft_isskip (char s)
+static int	ft_isskip(char s)
 {
 	if (s == ' ' || s == '\t' || s == '\n')
 		return (1);
@@ -20,20 +20,20 @@ static	int	ft_isskip (char s)
 		return (0);
 }
 
-char	*ft_strtrim (char const *s)
+char		*ft_strtrim(char const *s)
 {
-	size_t start;
-	size_t len;
-	char *res;
+	size_t	start;
+	size_t	len;
+	char	*res;
 
 	if (!s)
-		return(NULL);	
+		return (NULL);
 	start = 0;
 	len = ft_strlen(s);
 	while (ft_isskip(s[start]) == 1)
 		start++;
 	len--;
-	while(len > 0 && ft_isskip(s[len]) == 1)
+	while (len > 0 && ft_isskip(s[len]) == 1)
 		len--;
 	if (len >= start)
 		res = ft_strsub(s, start, len - start + 1);
@@ -41,4 +41,3 @@ char	*ft_strtrim (char const *s)
 		return (ft_strdup(""));
 	return (res);
 }
-

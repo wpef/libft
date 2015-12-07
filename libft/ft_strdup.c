@@ -14,15 +14,15 @@
 
 char	*ft_strdup(const char *s1)
 {
-	size_t strlen;
-	char *s2;
+	size_t		len;
+	char		*s2;
 
 	if (!s1)
-		return(NULL);
-	strlen = ft_strlen(s1);
-	s2 = ft_strnew(strlen);
+		return (NULL);
+	len = ft_strlen(s1);
+	s2 = ft_strnew(len);
 	if (!s2)
-		return(NULL);
+		return (NULL);
 	s2 = ft_strcpy(s2, s1);
-	return(s2);
+	return (s2);
 }

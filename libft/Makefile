@@ -6,7 +6,7 @@
 #    By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/04 22:58:04 by fde-monc          #+#    #+#              #
-#    Updated: 2015/12/05 00:36:18 by fde-monc         ###   ########.fr        #
+#    Updated: 2015/12/07 16:39:06 by fde-monc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,6 +69,8 @@ ft_tolower.c \
 ft_strtrim.c \
 ft_toupper.c
 
+
+
 OBJECTS = $(SRC:.c=.o)
 
 all: $(NAME)
@@ -85,6 +87,8 @@ clean :
 
 fclean: clean
 	rm -rf $(NAME)
+
+proper : all clean
 
 re: fclean all
 

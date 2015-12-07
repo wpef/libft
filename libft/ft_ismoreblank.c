@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_ismoreblank (int c)
+int	ft_ismoreblank(int c)
 {
 	if (ft_isblank(c) || c == '\n' || c == '\v' || c == '\r' || c == '\f')
 		return (1);

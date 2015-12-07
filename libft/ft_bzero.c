@@ -6,7 +6,7 @@
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 14:55:26 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/11/29 15:16:36 by fde-monc         ###   ########.fr       */
+/*   Updated: 2015/12/07 17:10:48 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
-	char *ss;
+	size_t	i;
+	char	*ss;
 
 	i = 0;
 	ss = (char *)s;

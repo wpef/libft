@@ -17,7 +17,7 @@ int	ft_atoi(const char *str)
 	int n;
 	int i;
 	int csign;
-	
+
 	i = 0;
 	n = 0;
 	while (ft_ismoreblank(str[i]))
