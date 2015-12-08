@@ -6,7 +6,7 @@
 #    By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/04 22:58:04 by fde-monc          #+#    #+#              #
-#    Updated: 2015/12/07 19:27:45 by fde-monc         ###   ########.fr        #
+#    Updated: 2015/12/08 20:17:52 by fde-monc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,8 +67,12 @@ ft_strstr.c \
 ft_strsub.c \
 ft_tolower.c \
 ft_strtrim.c \
-ft_toupper.c
-
+ft_toupper.c \
+ft_lstnew.c \
+ft_lstadd.c \
+ft_lstdelone.c \
+ft_lstdel.c \
+ft_lstiter.c
 
 
 OBJECTS = $(SRC:.c=.o)

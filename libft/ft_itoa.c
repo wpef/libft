@@ -6,7 +6,7 @@
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 15:49:13 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/01 17:21:38 by fde-monc         ###   ########.fr       */
+/*   Updated: 2015/12/08 18:54:09 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static	int	ft_case(int n)
 		n = n / 10;
 		c++;
 	}
-	c++;
 	return (c);
 }
 
@@ -38,19 +37,19 @@ char		*ft_itoa(int n)
 	int		d;
 
 	d = n;
+	if (d == -2147483648)
+		return (ft_strdup("-2147483648"));
+	if (n == 0 || n == -0)
+		return (ft_strdup("0"));
 	c = ft_case(n);
 	if (n <= 0)
 		n = -n;
-	res = malloc(sizeof(res) * c);
-	res[c - 1] = '\0';
-	if (n == 0 || n == -0)
-		return (ft_strcpy(res, "0"));
-	if (d == -2147483648)
-		return (ft_strcpy(res, "-2147483648"));
-	while (c + 1 > 0)
+	res = malloc(sizeof(res) * (c + 1));
+	res[c] = '\0';
+	while (c > 0)
 	{
 		c--;
-		res[c - 1] = (n % 10) + 48;
+		res[c] = (n % 10) + 48;
 		n = n / 10;
 	}
 	if (d < 0)

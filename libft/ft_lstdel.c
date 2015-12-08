@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 15:45:48 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/08 15:41:36 by fde-monc         ###   ########.fr       */
+/*   Created: 2015/12/08 18:22:26 by fde-monc          #+#    #+#             */
+/*   Updated: 2015/12/08 20:26:04 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	unsigned char	*cs1;
-	unsigned char	*cs2;
-	size_t			i;
+	t_list	*tmp;
+	t_list	*tmp2;
 
-	cs1 = (unsigned char *)s1;
-	cs2 = (unsigned char *)s2;
-	i = 0;
-	if (s1 == NULL && s2 == NULL)
-		return (0);
-	while (i < n && cs1[i] == cs2[i])
-		i++;
-	if (i == n || (cs1[i] == '\0' && cs2[i] == '\0'))
-		return (0);
-	return (cs1[i] - cs2[i]);
+	tmp = *alst;
+	while (tmp != NULL)
+	{
+		tmp2 = tmp->next;
+		del(tmp->content, tmp->content_size);
+		free(tmp);
+		tmp = tmp2;
+	}
+	*alst = NULL;
 }

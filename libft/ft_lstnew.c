@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/04 18:39:13 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/08 11:46:56 by fde-monc         ###   ########.fr       */
+/*   Created: 2015/12/08 15:41:54 by fde-monc          #+#    #+#             */
+/*   Updated: 2015/12/08 20:26:28 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	int		len;
-	char	*res;
-	int		i;
-	int		j;
+	t_list	*lstnew;
 
-	if (!s1 || !s2)
+	lstnew = (t_list *)malloc(sizeof(t_list));
+	if (!lstnew)
 		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	res = ft_strnew(len);
-	if (!res)
-		return (NULL);
-	i = 0;
-	while (s1[i])
+	if (content == NULL)
 	{
-		res[i] = s1[i];
-		i++;
+		lstnew->content = NULL;
+		lstnew->content_size = 0;
 	}
-	j = 0;
-	while (s2[j])
+	else
 	{
-		res[i + j] = s2[j];
-		j++;
+		lstnew->content = (void *)malloc(content_size);
+		if (lstnew->content == NULL)
+			return (NULL);
+		ft_memcpy((lstnew->content), content, content_size);
+		lstnew->content_size = content_size;
 	}
-	return (res);
+	lstnew->next = NULL;
+	return (lstnew);
 }
