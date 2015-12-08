@@ -6,7 +6,7 @@
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 14:22:27 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/08 20:29:20 by fde-monc         ###   ########.fr       */
+/*   Updated: 2015/12/08 21:04:04 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
-# include <ctype.h>
 
 /*
 ** official

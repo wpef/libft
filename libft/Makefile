@@ -6,7 +6,7 @@
 #    By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/04 22:58:04 by fde-monc          #+#    #+#              #
-#    Updated: 2015/12/08 20:17:52 by fde-monc         ###   ########.fr        #
+#    Updated: 2015/12/08 21:08:02 by fde-monc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,9 +93,12 @@ fclean: clean
 	rm -rf $(NAME)
 
 proper : all clean
+	rm -rf *.out
+	rm -rf ._*
 
 re: fclean all
 
 test : $(SRC)
-	$(CC) $(CFLAGS) -I . $(SRC) mains/maindeouf.c
+	$(CC) $(CFLAGS) -I . $(SRC) ../mains/maindeouf.c
 	./a.out
+	rm -r a.out
