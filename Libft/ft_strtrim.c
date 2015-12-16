@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/27 19:08:23 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/09 14:59:35 by fde-monc         ###   ########.fr       */
+/*   Created: 2015/12/04 19:54:58 by fde-monc          #+#    #+#             */
+/*   Updated: 2015/12/05 01:14:21 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+static int	ft_isskip(char s)
 {
-	char	*str;
-	size_t	i;
+	if (s == ' ' || s == '\t' || s == '\n')
+		return (1);
+	else
+		return (0);
+}
 
-	str = (char *)malloc(sizeof(char) * (size + 1));
-	if (!str)
+char		*ft_strtrim(char const *s)
+{
+	size_t	start;
+	size_t	len;
+	char	*res;
+
+	if (!s)
 		return (NULL);
-	i = 0;
-	while (i < size)
-	{
-		str[i] = '\0';
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	start = 0;
+	len = ft_strlen(s);
+	while (ft_isskip(s[start]) == 1)
+		start++;
+	len--;
+	while (len > 0 && ft_isskip(s[len]) == 1)
+		len--;
+	if (len >= start)
+		res = ft_strsub(s, start, len - start + 1);
+	else
+		return (ft_strdup(""));
+	return (res);
 }

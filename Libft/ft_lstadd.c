@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 18:49:15 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/09 15:01:06 by fde-monc         ###   ########.fr       */
+/*   Created: 2015/12/08 16:35:14 by fde-monc          #+#    #+#             */
+/*   Updated: 2015/12/08 20:25:09 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	int i;
+	t_list *lhead;
 
-	i = ft_strlen(s);
-	while (i >= 0)
-	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
-	}
-	return (0);
+	lhead = *alst;
+	new->next = lhead;
+	*alst = new;
 }

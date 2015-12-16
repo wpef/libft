@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 18:49:15 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/09 15:01:06 by fde-monc         ###   ########.fr       */
+/*   Created: 2015/12/09 12:27:29 by fde-monc          #+#    #+#             */
+/*   Updated: 2015/12/09 15:07:13 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	int i;
+	t_list	*res;
+	t_list	*tmp;
+	t_list	*tmp2;
 
-	i = ft_strlen(s);
-	while (i >= 0)
+	tmp = lst->next;
+	res = f(lst);
+	tmp2 = res;
+	while (tmp != NULL)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+		tmp2->next = f(tmp);
+		tmp = tmp->next;
+		tmp2 = tmp2->next;
 	}
-	return (0);
+	tmp2->next = NULL;
 }

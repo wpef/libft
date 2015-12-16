@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 18:49:15 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/09 15:01:06 by fde-monc         ###   ########.fr       */
+/*   Created: 2015/12/04 18:15:22 by fde-monc          #+#    #+#             */
+/*   Updated: 2015/12/04 18:23:12 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int i;
+	size_t	i;
+	size_t	dst_len;
 
-	i = ft_strlen(s);
-	while (i >= 0)
+	i = 0;
+	while (dst[i] && i < size)
+		i++;
+	dst_len = i;
+	while (src[i - dst_len] && i < size - 1)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+		dst[i] = src[i - dst_len];
+		i++;
 	}
-	return (0);
+	if (dst_len < size)
+		dst[i] = '\0';
+	return (dst_len + ft_strlen(src));
 }

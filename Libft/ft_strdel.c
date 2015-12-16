@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 18:49:15 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/09 15:01:06 by fde-monc         ###   ########.fr       */
+/*   Created: 2015/11/30 19:00:15 by fde-monc          #+#    #+#             */
+/*   Updated: 2015/11/30 19:15:41 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_strdel(char **as)
 {
-	int i;
-
-	i = ft_strlen(s);
-	while (i >= 0)
+	if (as)
 	{
-		if (s[i] == (char)c)
-			return ((char *)&s[i]);
-		i--;
+		free(*as);
+		*as = NULL;
 	}
-	return (0);
 }
