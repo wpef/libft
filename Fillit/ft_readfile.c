@@ -6,7 +6,7 @@
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:39:15 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/21 21:44:36 by hponcet          ###   ########.fr       */
+/*   Updated: 2015/12/21 21:54:12 by hponcet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,20 @@
 #include <fcntl.h>
 #include <stdio.h>
 
-// if blocks = 4
-// + les pieces doivent se toucher 6 ou 8 fois (en tout)
+t_tris	**ft_maketab(int count, char *buf)
+{
+	t_tris	**tetriminos;
+	int i;
 
-t_tris	*ft_maketab(char *buf)
+	i = 0;
+	while (i < count)
+	{
+	tetriminos[i]->tetrim = ft_makettris(buf);
+	i++;
+	}
+}
+
+t_tris	*ft_makettris(char *buf)
 {
 	t_tris	*tetrimino; // t_tris **tetrim --> tableau >> t_trim[i]
 	int 	col;
@@ -141,7 +151,7 @@ int		ft_readfile(int ac, char *file)
 		if (ft_isvalid(buf))
 			{
 				ft_putendl("===============> BUF IS VALID <================");
-				//ft_maketab(buf);
+				//ft_maketttris(buf);
 			}
 		else
 			ft_putendl("=/=/=/=/=/=/=> BUF IS NOT VALID <=/=/=/=/=/=/");
