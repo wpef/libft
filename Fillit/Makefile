@@ -6,7 +6,7 @@
 #    By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/04 22:58:04 by fde-monc          #+#    #+#              #
-#    Updated: 2015/12/18 18:29:18 by fde-monc         ###   ########.fr        #
+#    Updated: 2015/12/21 19:00:28 by fde-monc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,6 +62,6 @@ proper : all clean
 	@rm -rf *.swp
 
 update :
-	cp -Rf ../Libft ./Includes
+	cp -Rf ../Libft/* ./Includes
 
 re: fclean all
