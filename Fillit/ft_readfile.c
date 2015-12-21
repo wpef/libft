@@ -6,7 +6,7 @@
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:39:15 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/21 21:37:53 by fde-monc         ###   ########.fr       */
+/*   Updated: 2015/12/21 21:44:36 by hponcet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 t_tris	*ft_maketab(char *buf)
 {
-	t_tris	**tetrimino; // t_tris **tetrim --> tableau >> t_trim[i]
+	t_tris	*tetrimino; // t_tris **tetrim --> tableau >> t_trim[i]
 	int 	col;
 	int 	line;
 	int 	i;
@@ -29,6 +29,7 @@ t_tris	*ft_maketab(char *buf)
 	col = 0;
 	line = 0;
 	i = 0;
+	k = 0;
 	tetrimino = (t_tris *)malloc(sizeof(t_tris));
 	while (i < 20)
 	{
@@ -120,7 +121,7 @@ int	ft_isvalid(char *buf)
 	return (0);
 }
 
-int	main(int ac, char **av)
+int		ft_readfile(int ac, char *file)
 {	
 	int		fd;
 	int		ret;
@@ -133,7 +134,7 @@ int	main(int ac, char **av)
 		ft_putendl("NO FILE FOUND");
 		return (0);
 	}
-	fd = open(av[1], O_RDONLY);
+	fd = open(file, O_RDONLY);
 	while ((ret = read(fd, buf, 20)) > 0)
 	{
 		buf[20] = '\0';
@@ -155,5 +156,11 @@ int	main(int ac, char **av)
 	{	
 		return (0);
 	}
-	return (0);
+	return (1);
+}
+
+int		main(int ac, char **av)
+{
+	ft_readfile(ac, av[1]);
+	return(0);
 }
