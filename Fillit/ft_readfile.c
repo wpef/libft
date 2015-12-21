@@ -6,7 +6,7 @@
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:39:15 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/21 18:59:06 by fde-monc         ###   ########.fr       */
+/*   Updated: 2015/12/21 20:10:02 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,29 @@ t_tris	*ft_maketab(char *buf)
 int	ft_touch(char *buf)
 {
 	int i;
+	int	touch;
 
-	while (buf[i] == '.' || buf[i] == '\n')
+	i = 0;
+	touch = 0;
+	while (buf[i])
+	{
+		while (buf[i] == '.' || buf[i] == '\n')
+			i++;
+		if (buf[i] == '#')
+		{
+			if (buf[i + 1] == '#')
+				touch++;
+			if (buf[i - 1] == '#')
+				touch++;
+			if (buf[i + 5] == '#')
+				touch++;
+			if (buf [i - 5] == '#')
+				touch++;
+		}
 		i++;
-	if (buf[i] == '#')
-		// check voisins;
+	}
+	printf("SE TOUCHENT %d FOIS\n", touch);
+	return (touch);
 }
 
 int	ft_isvalid(char *buf)
@@ -106,6 +124,8 @@ int	main(int ac, char **av)
 	int		fd;
 	int		ret;
 	char	buf[21];
+	char	line[1];
+	int		ret2;
 
 	if (ac < 2)
 	{
@@ -113,17 +133,26 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	fd = open(av[1], O_RDONLY);
-	ret = read(fd, buf, 21);
-	buf[20] = '\0';
-	if (ret >= 20)
+	while ((ret = read(fd, buf, 20)) > 0)
 	{
+		buf[20] = '\0';
 		if (ft_isvalid(buf))
-		{
-			ft_putendl("===============> CHECK : buf is considered valid <================");
-			ft_maketab(buf);
-		}
+			{
+				ft_putendl("===============> BUF IS VALID <================");
+				//ft_maketab(buf);
+			}
 		else
-			ft_putendl("=/=/=/=/=/=/=/=/=/=/=> BUS IS NOT VALID <=/=/=/=/=/=/=/=/=/=/=/");
+			ft_putendl("=/=/=/=/=/=/=> BUF IS NOT VALID <=/=/=/=/=/=/");
+		ret2 = read (fd, line, 1);
+		if (line[0] != '\n')
+		{
+			ft_putendl("NOT WELL FORMATED");
+			return (0);
+		}
+	}
+	if (ret2 == 1)
+	{	
+		return (0);
 	}
 	return (0);
 }
