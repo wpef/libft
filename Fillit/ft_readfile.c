@@ -6,7 +6,7 @@
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:39:15 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/21 20:10:02 by fde-monc         ###   ########.fr       */
+/*   Updated: 2015/12/21 21:37:53 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@
 
 t_tris	*ft_maketab(char *buf)
 {
-	t_tris	*tetrimino;
+	t_tris	**tetrimino; // t_tris **tetrim --> tableau >> t_trim[i]
 	int 	col;
 	int 	line;
 	int 	i;
+	int		k;
 
 	col = 0;
 	line = 0;
