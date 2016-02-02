@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: Perso <Perso@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 14:25:20 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/09 15:08:42 by fde-monc         ###   ########.fr       */
+/*   Updated: 2016/02/03 00:02:06 by Perso            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ char				*ft_strtrim (char const *s);
 char				*ft_itoa(int n);
 void				ft_strdel (char **as);
 void				ft_strclr(char *s);
+int					ft_charindex(char *s, char c);
 
 /*
 ** lists
