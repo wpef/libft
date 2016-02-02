@@ -92,11 +92,10 @@ clean :
 fclean: clean
 	rm -rf $(NAME)
 
-proper : all clean
-	rm -rf *.out
-	rm -rf ._*
+nclean : all clean
 
 re: fclean all
+
 
 test : $(SRC)
 	$(CC) $(CFLAGS) -I . $(SRC) ../mains/maindeouf.c
