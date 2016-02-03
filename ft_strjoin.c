@@ -14,15 +14,15 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		len;
 	char	*res;
 	int		i;
 	int		j;
 
-	if (!s1 || !s2)
-		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	res = ft_strnew(len);
+	if (!s1 && s2)
+		return (ft_strdup(s2));
+	else if (!s2 && s1)
+		return (ft_strdup(s1));
+	res = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
 	if (!res)
 		return (NULL);
 	i = 0;
