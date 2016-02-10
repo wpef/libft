@@ -73,7 +73,9 @@ ft_lstnew.c \
 ft_lstadd.c \
 ft_lstdelone.c \
 ft_lstdel.c \
-ft_lstiter.c
+ft_lstiter.c \
+ft_idebug.c \
+ft_cdebug.c
 
 
 OBJECTS = $(SRC:.c=.o)
