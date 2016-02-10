@@ -86,7 +86,8 @@ char				*ft_itoa(int n);
 void				ft_strdel (char **as);
 void				ft_strclr(char *s);
 int					ft_charindex(char *s, char c);
-
+void				ft_idebug(char *str, int nb);
+void				ft_cdebug(char *str, char c);
 /*
 ** lists
 */
