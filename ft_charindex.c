@@ -5,7 +5,9 @@ int	ft_charindex(char *s, char c)
 	int i;
 
 	i = 0;
-	if (s && s[i])
+	if (!s)
+		return (-2)
+	else
 	{
 		while ((s[i] != '\0') && (s[i] != c))
 			i++;
