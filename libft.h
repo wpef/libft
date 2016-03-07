@@ -6,7 +6,7 @@
 /*   By: Perso <Perso@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 14:25:20 by fde-monc          #+#    #+#             */
-/*   Updated: 2016/02/03 00:02:06 by Perso            ###   ########.fr       */
+/*   Updated: 2016/03/07 18:19:56 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr(char const *c);
 void				ft_putstr_fd(char const *s, int fd);
-void				ft_putnbr(int n);
+void				ft_putnbr(intmax_t n);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putendl(char const *s);
 void				ft_putendl_fd(char const *s, int fd);
