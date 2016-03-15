@@ -6,7 +6,7 @@
 #    By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015\12\04 22:58:04 by fde-monc          #+#    #+#              #
-#    Updated: 2016/03/06 15:08:14 by fde-monc         ###   ########.fr        #
+#    Updated: 2016/03/15 15:42:52 by fde-monc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRC = 	ft_atoi.c \
 		ft_charindex.c \
 		ft_createtab.c \
 		ft_freetab.c \
+		ft_gnl.c \
 		ft_idebug.c  \
 		ft_isalnum.c \
 		ft_isalpha.c \

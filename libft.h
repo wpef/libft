@@ -6,7 +6,7 @@
 /*   By: Perso <Perso@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 14:25:20 by fde-monc          #+#    #+#             */
-/*   Updated: 2016/02/03 00:02:06 by Perso            ###   ########.fr       */
+/*   Updated: 2016/03/15 15:41:48 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <fcntl.h>
 
 /*
 ** official
@@ -88,6 +89,7 @@ void				ft_strclr(char *s);
 int					ft_charindex(char *s, char c);
 void				ft_idebug(char *str, int nb);
 void				ft_cdebug(char *str, char c);
+
 /*
 ** lists
 */
@@ -105,5 +107,14 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+
+/*
+** Get_Next_line
+*/
+
+int					ft_gnl(int const fd, char **line);
+int					gnl_read(int const fd, char **line, char **rest);
+char				*gnl_getrest(char *s, int nindex);
 
 #endif
