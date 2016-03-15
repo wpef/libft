@@ -6,7 +6,7 @@
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/06 15:09:54 by fde-monc          #+#    #+#             */
-/*   Updated: 2016/03/15 16:18:50 by fde-monc         ###   ########.fr       */
+/*   Updated: 2016/03/15 16:25:09 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,4 @@ void	ft_sdebug(char *str, char *s)
 		i++;
 	}
 	ft_putchar('\n');
-}
-
-int main(int ac, char **av)
-{
-	if (ac > 1)
-	{
-		ft_sdebug("Ceci est % test", av[1]);
-	}
-	return (0);
 }
