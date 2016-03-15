@@ -6,7 +6,7 @@
 /*   By: Perso <Perso@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 14:25:20 by fde-monc          #+#    #+#             */
-/*   Updated: 2016/03/15 15:47:21 by fde-monc         ###   ########.fr       */
+/*   Updated: 2016/03/15 16:21:09 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void				*ft_memmove(void *dst, const void *src, size_t len);
 ** custom
 */
 
+void				ft_sdebug(char *str, char *s);
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr(char const *c);

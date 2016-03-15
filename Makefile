@@ -6,7 +6,7 @@
 #    By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015\12\04 22:58:04 by fde-monc          #+#    #+#              #
-#    Updated: 2016/03/15 15:42:52 by fde-monc         ###   ########.fr        #
+#    Updated: 2016/03/15 16:20:14 by fde-monc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ SRC = 	ft_atoi.c \
 		ft_putnbr_fd.c \
 		ft_putstr.c \
 		ft_putstr_fd.c \
+		ft_sdebug.c \
 		ft_strcat.c \
 		ft_strchr.c \
 		ft_strclr.c \
