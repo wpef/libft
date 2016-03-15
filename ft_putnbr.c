@@ -6,13 +6,13 @@
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 17:34:18 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/06 22:35:59 by fde-monc         ###   ########.fr       */
+/*   Updated: 2016/03/07 18:21:16 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void	ft_putnbr(intmax_t n)
 {
 	if (n == -2147483648)
 		return (ft_putstr("-2147483648"));
