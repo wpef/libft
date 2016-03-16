@@ -29,6 +29,7 @@ SRC = 	ft_atoi.c \
 		ft_ismoreblank.c \
 		ft_isprint.c \
 		ft_itoa.c \
+		ft_joinjoin.c \
 		ft_lstadd.c \
 		ft_lstdel.c \
 		ft_lstdelone.c \
@@ -43,6 +44,7 @@ SRC = 	ft_atoi.c \
 		ft_memdel.c \
 		ft_memmove.c \
 		ft_memset.c \
+		ft_print_tab.c \
 		ft_putchar.c \
 		ft_putchar_fd.c \
 		ft_putendl.c \
