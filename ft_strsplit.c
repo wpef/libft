@@ -6,7 +6,7 @@
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 12:13:34 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/02 20:48:47 by fde-monc         ###   ########.fr       */
+/*   Updated: 2016/04/10 22:13:43 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char		**ft_strsplit(char const *s, char c)
 	i = 0;
 	if (!s)
 		return (NULL);
-	tab = (char **)malloc(sizeof(char*) * ft_wordscount(s, c) + 1);
+	tab = (char **)malloc(sizeof(char*) * (ft_wordscount(s, c) + 1));
 	if (!tab)
 		return (NULL);
 	strt = 0;
