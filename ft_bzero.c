@@ -23,7 +23,8 @@ void	ft_bzero(void *s, size_t n)
 	{
 		while (i < n)
 		{
-			ss[i] = '\0';
+			if (ss[i])
+				ss[i] = '\0';
 			i++;
 		}
 	}

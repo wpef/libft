@@ -25,6 +25,8 @@ void	ft_sdebug(char *str, char *s)
 			ft_putchar(str[i]);
 		if (str[i] == '%')
 		{
+			if (s == NULL)
+				return (ft_putstr("NULL"));
 			while (s[j])
 			{
 				ft_putchar(s[j]);
