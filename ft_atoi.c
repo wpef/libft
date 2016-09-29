@@ -6,7 +6,7 @@
 /*   By: fde-monc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 16:21:11 by fde-monc          #+#    #+#             */
-/*   Updated: 2015/12/09 15:02:51 by fde-monc         ###   ########.fr       */
+/*   Updated: 2016/09/29 16:43:45 by fde-monc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ft_atoi(const char *str)
 
 	i = 0;
 	n = 0;
+	csign = 0;
 	while (ft_ismoreblank(str[i]))
 		i++;
 	if (str[i] == '+' || str[i] == '-')
